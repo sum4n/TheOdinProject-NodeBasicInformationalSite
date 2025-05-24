@@ -7,7 +7,7 @@ const server = http.createServer((req, res) => {
   let filePath = path.join(
     __dirname,
     "public",
-    req.url == "/" ? "index.html" : req.url
+    req.url == "/" ? "index.html" : `${req.url}.html`
   );
 
   fs.readFile(filePath, "utf-8", (err, data) => {
